@@ -7,7 +7,7 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
+import { Button, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 export default function FileNavigationpaneexpandedPostLoginHomePage(props) {
   const { User, overrides: overridesProp, ...rest } = props;
   const overrides = { ...overridesProp };
@@ -889,7 +889,7 @@ export default function FileNavigationpaneexpandedPostLoginHomePage(props) {
                     "View.View[0].View[0].Flex[0].Flex[1].Flex[1].Flex[0]"
                   )}
                 >
-                  <Text
+                  <Button
                     fontFamily="Roboto"
                     fontSize="20px"
                     fontWeight="500"
@@ -909,7 +909,7 @@ export default function FileNavigationpaneexpandedPostLoginHomePage(props) {
                       overrides,
                       "View.View[0].View[0].Flex[0].Flex[1].Flex[1].Flex[0].Text[0]"
                     )}
-                  ></Text>
+                  />
                   <View
                     width="18px"
                     height="18px"

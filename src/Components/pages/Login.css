@@ -1,0 +1,27 @@
+.login {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    padding: 150px;
+    font-size: 14px;
+}
+.f{
+    width: 100%;
+    height: 100vw;
+    background-color: beige;
+}
+
+#root{
+    height: 100%;
+}
+
+button{
+    margin: 40px;
+}
+
+input{
+    margin: 20px;
+}

@@ -2,7 +2,7 @@ import "./App.css";
 // Gmail authentication module
 import { withAuthenticator, AmplifySignOut } from "@aws-amplify/ui-react";
 //To talk to Database use "API" module
-import { Amplify, API, graphqlOperation, Auth } from "aws-amplify";
+import { Amplify, API, graphqlOperation } from "aws-amplify";
 // Using GraphQL mutations as a function
 import {
   createUserTable,
@@ -23,10 +23,12 @@ import DocIframe from "./Components/Doc";
 import FormBox from "./Components/Formbox";
 // import { CustomErrorComponent } from "custom-error";
 import Pdff from "./Components/generated.pdf";
-import docc from "./Components/Susmit Walve(19311020) tut1.docx";
+// import docc from "./Components/Susmit Walve(19311020) tut1.docx";
 import vdo1 from "./Components/Pexels Videos 1409899.mp4";
 import ReactPlayer from "react-player";
-import { FileNavigationpaneexpandedPostLoginHomePage } from './ui-components';
+import { FileNavigationpaneexpandedPostLoginHomePage } from "./ui-components";
+import HomeComponent from "./Components/HomeComponent";
+import Drawer from "./Components/drawer";
 
 Amplify.configure(awsmobile);
 
@@ -42,17 +44,17 @@ function App({ signOut, user }) {
   const [vdo, setvdo] = useState("");
   const [videoFilePath, setVideoFilePath] = useState(null);
 
-  useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .then((user) => {
-        // return Auth.changePassword(user, 'oldPassword', 'newPassword');
-        console.log(user);
-        setuserName(user.username);
-        // setuserEmail(user.attributes.email)
-      })
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   Auth.currentAuthenticatedUser()
+  //     .then((user) => {
+  //       // return Auth.changePassword(user, 'oldPassword', 'newPassword');
+  //       console.log(user);
+  //       setuserName(user.username);
+  //       // setuserEmail(user.attributes.email)
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((err) => console.log(err));
+  // }, []);
 
   //<============ Function to Handle The Form data and upload the data to dynamoDB using GraphQL apis===============>
   const handleFormdatafun = async (e) => {
@@ -94,10 +96,11 @@ function App({ signOut, user }) {
         </button>
         {/* <AmplifySignOut/> */}
       </center>
-      <div>
+      {/* <div>
         <App2 />
-      </div>
-      <form onSubmit={handleFormdatafun}>
+      </div> */}
+
+      {/* <form onSubmit={handleFormdatafun}>
         User Name:{" "}
         <input
           type="text"
@@ -132,7 +135,8 @@ function App({ signOut, user }) {
         <p>{userComment}</p>
         <br />
         <button type="submit">Update input Data to aws DynamoDB table</button>
-      </form>
+      </form> */}
+
       {/* <iframe
         src="https://onedrive.live.com/embed?cid=C1E995875B26BBD4&amp;resid=C1E995875B26BBD4%211911&amp;authkey=AGNZd_iov9Nvruo&amp;em=2&amp;wdAr=1.7777777777777777"
         width="1186px"
@@ -156,7 +160,7 @@ function App({ signOut, user }) {
         scrolling="no"
         src="https://onedrive.live.com/embed?resid=C1E995875B26BBD4%21935&authkey=%21AEHXkNjKf1cWIsM&em=2&AllowTyping=True&ActiveCell='Sheet1'!C5&wdHideGridlines=True&wdHideHeaders=True&wdDownloadButton=True&wdInConfigurator=True"
       ></iframe> */}
-      Doc link:
+      {/* Doc link:
       <input
         type="url"
         name="doclink"
@@ -164,16 +168,16 @@ function App({ signOut, user }) {
         onChange={(e) => {
           setDoclink(e.target.value);
         }}
-      />{" "}
-      <DocIframe source={Doclink} />
+      />{" "} */}
+      {/* <DocIframe source={Doclink} /> */}
       {/* <FormBox/> */}
-      <h1>React File Viewer Demo</h1>
+      {/* <h1>React File Viewer Demo</h1>
       <h2>Displaying file extensions:</h2>
       <details>
         <summary>.docx</summary>
         <FileViewer fileType="docx" filePath={docc} onError={onError} />
-      </details>
-      <details>
+      </details> */}
+      {/* <details>
         <summary>Video</summary>
         <input
           type="file"
@@ -184,16 +188,16 @@ function App({ signOut, user }) {
           }}
         />
         <FileViewer fileType="mp4" filePath={vdo} onError={onError} />
-      </details>
+      </details> */}
       {/* <details>
         <summary>MP3</summary>
       <FileViewer fileType="mp3" filePath="./MP3_700KB.mp3" onError={onError} />
       </details>  */}
-      <details>
+      {/* <details>
         <summary>PDF</summary>
         <FileViewer fileType="pdf" filePath={Pdff} onError={onError} />
       </details>
-      <input type="file" onChange={handleVideoUpload} />
+      <input type="file" onChange={handleVideoUpload} /> */}
       {/* <ReactPlayer
         url={vdo1}
         width="100%"
@@ -201,7 +205,10 @@ function App({ signOut, user }) {
         controls={true}
       /> */}
       {/* <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQngURS59TctWntZhZlm-VEPYvExsadEvGotffiwe4AmtEiV9CGi69UwX39jfb0VqwFaZy6NmJuIT6x/pubhtml?widget=true&amp;headers=false"></iframe> */}
-      <FileNavigationpaneexpandedPostLoginHomePage />
+
+      {/* <FileNavigationpaneexpandedPostLoginHomePage /> */}
+      <Drawer />
+      {/* <HomeComponent /> */}
     </>
   );
 }

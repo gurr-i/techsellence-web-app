@@ -1,0 +1,8 @@
+{
+    "AppSyncApiName": "techsellenceweb",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "AuthModeLastUpdated": "2022-02-02T13:45:38.760Z",
+    "S3DeploymentBucket": "amplify-techsellenceweb-dev-164108-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/8a6ee570eb22598a0065cfefb28adf068a2ac78d"
+}

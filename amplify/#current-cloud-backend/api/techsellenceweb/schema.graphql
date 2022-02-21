@@ -1,0 +1,7 @@
+type UserTable @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user_Name: String
+  user_email: String
+  user_comment: String
+}
+ 
